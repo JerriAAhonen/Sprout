@@ -41,6 +41,7 @@ public class RadialMenu : MonoBehaviour
 		if (!isInitialised) 
 			return;
 
+		// Close menu if game ends while menu is open
 		if (!ScoreManager.Instance.LevelOngoing && isOpen)
 		{
 			Close();
