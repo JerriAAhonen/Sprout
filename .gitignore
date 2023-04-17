@@ -9,3 +9,4 @@ Temp/*
 mono_crash.*
 *.DS_Store
 .vs
+Builds
