@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151af9ab1b77a1d429a03cf0f627bb98, type: 3}
+  m_Name: ProjectileDatabase
+  m_EditorClassIdentifier: 
+  projectiles:
+  - Type: 0
+    Prefab: {fileID: 1125532934671284937, guid: d1ddcba98f5c9144796bc306765cd112,
+      type: 3}
+    Icon: {fileID: 21300000, guid: 4120c6f694987084486149f26753fac8, type: 3}
+  - Type: 1
+    Prefab: {fileID: 1125532934671284937, guid: 6aeb2c8fcc40b2d4ead6312f6f895647,
+      type: 3}
+    Icon: {fileID: 21300000, guid: 30ab7bb614901ad4d9bc81116ee995aa, type: 3}
+  - Type: 2
+    Prefab: {fileID: 1125532934671284937, guid: 00f19ff326bf19943b6c88da4a297a44,
+      type: 3}
+    Icon: {fileID: 21300000, guid: f721dadc60b2c2b4ab0c10f1afd7d067, type: 3}
+  - Type: 3
+    Prefab: {fileID: 1125532934671284937, guid: 84a1654e96cb4a5478b3ff88604e8e4b,
+      type: 3}
+    Icon: {fileID: 21300000, guid: 9214d5dd3c266624cbe5f40823716ec0, type: 3}
