@@ -126,9 +126,14 @@ public class LevelUI : MonoBehaviour
 	{
 		LeanTween.cancel(reloadID);
 
+		Cursor.visible = false;
+
 		reloadID = LeanTween.value(0f, 1f, dur)
 			.setOnUpdate(v => reloadIndicator.fillAmount = v)
-			.setOnComplete(() => reloadIndicator.fillAmount = 0f)
+			.setOnComplete(() => {
+				reloadIndicator.fillAmount = 0f;
+				Cursor.visible = true;
+			})
 			.uniqueId;
 	}
 }

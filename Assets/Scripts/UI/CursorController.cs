@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using UnityEditor;
 using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
 	[SerializeField] private TreeInfo treeInfo;
 	[SerializeField] private LayerMask treeLayer;
+	[SerializeField] private Canvas uiCanvas;
+	[SerializeField] private Transform shootForceIndicator;
+	[SerializeField] private Transform reloadIndicator;
 
 	private Tree currentTree;
 
@@ -20,6 +21,7 @@ public class CursorController : MonoBehaviour
 		if (!ScoreManager.Instance.LevelOngoing)
 			return;
 
+		// Tree info on hover
 		var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(ray, out var hit, Mathf.Infinity, treeLayer))
 		{
@@ -33,6 +35,11 @@ public class CursorController : MonoBehaviour
 		{
 			OnStopHovering();
 		}
+
+		// Ui elements that are anchored to the cursor
+
+		shootForceIndicator.position = Input.mousePosition + Vector3.up * 20f;
+		reloadIndicator.position = Input.mousePosition;
 	}
 
 	private void OnHoverOverNewTree(Tree newTree)

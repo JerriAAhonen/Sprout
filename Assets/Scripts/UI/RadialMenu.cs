@@ -53,9 +53,7 @@ public class RadialMenu : MonoBehaviour
 		if (Input.GetMouseButton(1))
 		{
 			if (!isOpen)
-			{
 				Open();
-			}
 
 			var dir = ((Vector2)Input.mousePosition - screenCenter).normalized;
 			var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -63,7 +61,6 @@ public class RadialMenu : MonoBehaviour
 			pointer.rotation = Quaternion.Euler(rotation);
 
 			var signedAngle = Vector2.SignedAngle(Vector2.up, dir);
-			//Debug.Log($"signedAngle {signedAngle}");
 
 			float actualAngle;
 			if (signedAngle < 0)
@@ -71,13 +68,9 @@ public class RadialMenu : MonoBehaviour
 			else
 			{
 				actualAngle = 180 + (180 - signedAngle);
-				//Debug.Log($"actualAngle: 180 + (180 - {signedAngle}) = {actualAngle}");
 			}
 
 			int selectedItem = Mathf.FloorToInt(actualAngle / itemSpacingAngle);
-			
-			//Debug.Log($"Selected item: {selectedItem}");
-
 			if (selectedItem != currentlySelected)
 			{
 				AnimateSelection(currentlySelected, selectedItem);
@@ -103,8 +96,6 @@ public class RadialMenu : MonoBehaviour
 		var projectileDatabase = Resources.Load<ProjectileDatabase>("ProjectileDatabase");
 		var itemNum = projectileDatabase.Count;
 		itemSpacingAngle = 360 / itemNum;
-
-		//Debug.Log($"spacingAngle {itemSpacingAngle}");
 		
 		for (int i = 0; i < itemNum; i++)
 		{
